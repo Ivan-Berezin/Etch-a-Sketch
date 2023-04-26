@@ -33,4 +33,4 @@ const boxes = document.querySelectorAll(".grid>.rows>div");
 
 }
 
-fillGrid(10);
+fillGrid(16);

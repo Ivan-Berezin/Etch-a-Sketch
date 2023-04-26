@@ -11,23 +11,35 @@ input {
  font-size: 20px;
 }
 
-div {
-    border: 1px dotted black;
-}
+
 
 .grid {
-    padding: 10px;
-    height: 100px;
+    height: 250px;
+    width: 250px;
+    border: 1px red solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    display: flex;
+    /*flex-direction: column;*/
+    
+    
+
     
 }
 
 .rows {
     display: flex;
     flex: auto;
+    flex-direction: column;
+    
+    
     
 }
 
 .box {
     flex: auto;
     height: 10px;
+    border: 0.5px solid black;
+    align-items: stretch;
 }
