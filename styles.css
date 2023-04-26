@@ -1,0 +1,33 @@
+body {
+    text-align: center;
+    font-size: 30px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+input {
+ font-size: 20px;
+}
+
+div {
+    border: 1px dotted black;
+}
+
+.grid {
+    padding: 10px;
+    height: 100px;
+    
+}
+
+.rows {
+    display: flex;
+    flex: auto;
+    
+}
+
+.box {
+    flex: auto;
+    height: 10px;
+}
