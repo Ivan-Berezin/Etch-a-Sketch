@@ -1,7 +1,10 @@
 let grid = document.querySelector(".grid");
 
+const numberInput = document.querySelector("#number");
+const submitButton = document.querySelector(".submit");
 
 function fillGrid(num) {
+
     let i = 0;
 while (i < num) { 
     div = document.createElement("div");    
@@ -32,9 +35,21 @@ const boxes = document.querySelectorAll(".grid>.rows>div");
     }
 
 }
+ 
+function removeChild() {
+    const rows = document.querySelectorAll(".grid>div");
+    console.log(rows);
+    for (row of rows) {
+        row.remove();
+    }
+    };
 
-fillGrid(16);
 
-function generateRandomColor() {
-    Math.randnum
-}
+num = 16;
+fillGrid(num);
+
+submitButton.addEventListener("click", () => {
+    removeChild();
+    num = numberInput.valueAsNumber;
+    fillGrid(num);
+})
