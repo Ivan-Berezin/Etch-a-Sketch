@@ -28,9 +28,13 @@ while (t < num) {
 const boxes = document.querySelectorAll(".grid>.rows>div");
     for (const box of boxes) {
         box.classList.add("box");
-        
+        box.addEventListener("mouseover", () => box.style.backgroundColor = "black");
     }
 
 }
 
 fillGrid(16);
+
+function generateRandomColor() {
+    Math.randnum
+}
