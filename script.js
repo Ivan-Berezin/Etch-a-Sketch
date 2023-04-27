@@ -6,39 +6,38 @@ const submitButton = document.querySelector(".submit");
 function fillGrid(num) {
 
     let i = 0;
-while (i < num) { 
-    div = document.createElement("div");    
-    grid.appendChild(div);
-    i++;
-}
+    while (i < num) { 
+        div = document.createElement("div");    
+        grid.appendChild(div);
+        i++;
+    }
 
-const rows = document.querySelectorAll(".grid>div");
+    const rows = document.querySelectorAll(".grid>div");
 
 
 
-for (const row of rows) {
-    row.classList.add("rows");
-    let t = 0;
-while (t < num) { 
-    div = document.createElement("div");    
-    row.appendChild(div);
-    t++;
+    for (const row of rows) {
+        row.classList.add("rows");
+        let t = 0;
+    while (t < num) { 
+        div = document.createElement("div");    
+        row.appendChild(div);
+        t++;  
 
-    
-}
-}
-
-const boxes = document.querySelectorAll(".grid>.rows>div");
+    const boxes = document.querySelectorAll(".grid>.rows>div");
     for (const box of boxes) {
         box.classList.add("box");
         box.addEventListener("mouseover", () => {
-            box.style.backgroundColor = "red"; 
-            box.style.filter = "brightness(100%)";
+            box.style.backgroundColor = "rgb(100,0,100)";
         });
-    }
-
-}
+    };
  
+}
+}
+};
+
+
+
 /* 
     TO CREATE A RANDOM COLOR WHEN MOUSE OVER AND MAKE IT 10% DARKER EACH TIME MOUSE GOES THROUGH.
 
@@ -55,13 +54,20 @@ const boxes = document.querySelectorAll(".grid>.rows>div");
 
 */
 
+let x = 100;
 
  function color() {
-  if (box.style.backgroundColor = rgba(0,0,0,0)) {
-   box.style.backgroundColor = generateRandomColor();
+  if (box.style.backgroundColor = "white") {
+   box.style.backgroundColor = `rgb(${generateRandomColor(),generateRandomColor(),generateRandomColor()})`;
   } else {
-    box.style.filter = "brightness(" + (100 - 10) +"%)"; 
+    
+    box.style.filter = "brightness(" + (x - 10) +"%)"; 
+    x -= 100;
   }
+}
+
+function generateRandomColor() { 
+    return Math.floor(Math.random() * 225);
 }
 
 
@@ -81,4 +87,5 @@ submitButton.addEventListener("click", () => {
     removeChild();
     num = numberInput.valueAsNumber;
     fillGrid(num);
-})
+});
+
