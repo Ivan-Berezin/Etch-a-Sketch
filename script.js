@@ -3,6 +3,11 @@ let grid = document.querySelector(".grid");
 const numberInput = document.querySelector("#number");
 const submitButton = document.querySelector(".submit");
 
+function generateRandomColor() { 
+    return Math.floor(Math.random() * 225);
+}
+console.log(generateRandomColor());
+
 function fillGrid(num) {
 
     let i = 0;
@@ -20,21 +25,27 @@ function fillGrid(num) {
         row.classList.add("rows");
         let t = 0;
     while (t < num) { 
-        div = document.createElement("div");    
+        div = document.createElement("div");   
+        div.classList.add("box");
+        div.classList.add('white'); 
         row.appendChild(div);
         t++;  
 
-    const boxes = document.querySelectorAll(".grid>.rows>div");
+    const boxes = document.querySelectorAll(".grid>.rows>.white");
     for (const box of boxes) {
-        box.classList.add("box");
+        
         box.addEventListener("mouseover", () => {
-            box.style.backgroundColor = "rgb(100,0,100)";
-        });
-    };
- 
-}
-}
+            if (box.style.backgroundColor = "white") {
+                box.style.backgroundColor = "rgb(" + generateRandomColor() + "," + generateRandomColor() + "," + generateRandomColor() + ")"; 
+                box.classList.remove("white");
+                 }
+            });
+        };
+    
+    }
+    }
 };
+
 
 
 
@@ -66,9 +77,7 @@ let x = 100;
   }
 }
 
-function generateRandomColor() { 
-    return Math.floor(Math.random() * 225);
-}
+
 
 
 
@@ -78,7 +87,6 @@ function removeChild() {
         row.remove();
     }
     };
-
 
 num = 16;
 fillGrid(num);
