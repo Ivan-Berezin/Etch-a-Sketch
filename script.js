@@ -6,6 +6,7 @@ function fillGrid(num) {
 while (i < num) { 
     div = document.createElement("div");    
     grid.appendChild(div);
+    div.setAttribute('id', i);
     i++;
 }
 
@@ -19,6 +20,7 @@ for (const row of rows) {
 while (t < num) { 
     div = document.createElement("div");    
     row.appendChild(div);
+    div.setAttribute('id', row.getAttribute("id") + t);
     t++;
 
     
@@ -28,9 +30,25 @@ while (t < num) {
 const boxes = document.querySelectorAll(".grid>.rows>div");
     for (const box of boxes) {
         box.classList.add("box");
-        
     }
 
 }
 
+
+
 fillGrid(16);
+
+const boxes = document.querySelectorAll(".grid>.rows>.box");
+console.log(boxes);
+
+
+
+
+for (box of boxes) {
+    box.addEventListener("mouseover", (event) => {
+       event.style.backgroundColor = "black"; 
+    });
+    
+}
+
+
